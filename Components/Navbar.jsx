@@ -22,7 +22,7 @@ function Navbar() {
     setLogo(!logo)
   }
   return (
-    <div className='flex  w-full justify-between items-center h-20 px-4 absolute z-10 bg-red-700 text-yellow-500  '>
+    <div className='flex  w-full justify-between items-center h-20 px-4 fixed z-10 bg-red-700 text-yellow-500   '>
       <div className='flex w-full justify-between max-w-[1300px] mx-auto'>
         <div className='flex '>
             <div className='my-5  '>
