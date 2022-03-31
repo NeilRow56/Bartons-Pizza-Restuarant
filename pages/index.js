@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import HomeSection from '../Components/HomeSection';
-import LeftCard from '../Components/LeftCard';
-import PizzaList from '../Components/PizzaList';
-import Slider from '../Components/Slider';
 
-export default function Home() {
+import HomeSection from '../Components/HomeSection';
+import axios from 'axios';
+import PizzaList from '../Components/PizzaList';
+
+export default function Home({ pizzaList }) {
 	return (
 		<>
 			<Head>
@@ -14,8 +14,16 @@ export default function Home() {
 			</Head>
 			<div className="bg-red-700 ">
 				<HomeSection />
-				<PizzaList />
+				<PizzaList pizzaList={pizzaList} />
 			</div>
 		</>
 	);
 }
+export const getServerSideProps = async () => {
+	const res = await axios.get('http://localhost:3000/api/products');
+	return {
+		props: {
+			pizzaList: res.data,
+		},
+	};
+};

@@ -43,9 +43,19 @@
 		@apply text-2xl font-bold;
 	}
 	button {
-		@apply p-3 border bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white rounded-md;
+		@apply p-1 border bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white rounded-md;
 	}
 	.icon {
 		@apply text-2xl cursor-pointer;
+	}
+	.done {
+		@apply text-green-700 opacity-100;
+	}
+	.inProgress {
+		@apply text-orange-500 opacity-100;
+	}
+
+	.undone {
+		@apply text-gray-500 opacity-20;
 	}
 }
