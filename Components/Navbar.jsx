@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { BsPerson } from 'react-icons/bs';
-import { BiSearch } from 'react-icons/bi';
+import Link from 'next/link'
+import { useSelector } from "react-redux"
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';
 import { BsFillTelephoneOutboundFill } from 'react-icons/bs'
@@ -21,6 +21,8 @@ function Navbar() {
     setNav(!nav)
     setLogo(!logo)
   }
+
+  const quantity = useSelector(state => state.cart.quantity)
   return (
     <div className='flex  w-full justify-between items-center h-20 px-4 fixed z-10 bg-red-700 text-yellow-500   '>
       <div className='flex w-full justify-between max-w-[1300px] mx-auto'>
@@ -41,21 +43,25 @@ function Navbar() {
             </div>
         </div>
         <ul className='hidden lg:flex items-center'>
-            <li>Homepage</li>
+          <Link href='/' passHref>
+            <li className='cursor-pointer'>Homepage</li>
+            </Link>
             <li>Products</li>
             <li>Menu</li>
             <li>Events</li>
             <li>Blog</li>
             <li>Contact</li>
-            <div className='hidden md:flex my-1 h-[40px] '>
+            <Link href='/cart' passHref>
+            <div className='hidden md:flex my-1 h-[40px] cursor-pointer '>
               <div className='relative'>
             <GiShoppingCart className='mr-2 mt-2' size={25}/>
             <div className='absolute top-[-10px] right-0 rounded-full bg-green-600 text-white w-6 h-6 m px-2'>
-              2
+              {quantity}
             </div>
             </div>
 
-        </div>
+            </div>
+            </Link>
         </ul>
         </div>
          {/* Hamburger  */}
@@ -75,15 +81,17 @@ function Navbar() {
             <li className='border-b'>Events</li>
             <li className='border-b'>Blog</li>
             <li className='border-b'>Contact</li>
+            <Link href='/cart' passHref>
             <div className='hidden md:flex my-1 h-[40px] '>
               <div className='relative'>
             <GiShoppingCart className='mr-2 mt-2' size={25}/>
             <div className='absolute top-[-10px] right-0 rounded-full bg-green-600 text-white w-6 h-6 m px-2'>
-              2
+              {quantity}
             </div>
+            
+            </div>            
             </div>
-
-        </div>
+            </Link>
             <div className='flex flex-col'>
             <button className='my-6'>Search</button>
             <button>Account</button>

@@ -20,7 +20,7 @@ function Footer1() {
          </div>
         <div className='w-full text-gray-200   col-span-1  mx-auto' >
         <div className=''>
-          <h1 className='my-5 md:my-1 mx-20 md:mx-2 text-yellow-400'>FIND OUR RESTAURANTS</h1>
+          <h1 className='my-5 md:my-4 mx-20 md:mx-2 text-yellow-400'>FIND OUR RESTAURANTS</h1>
           <p className='py-4  px-20 md:px-2'>
             1654 R. Don Road #304.
             <br /> NewYork, 85022
