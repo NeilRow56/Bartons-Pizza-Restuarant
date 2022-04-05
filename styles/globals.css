@@ -49,7 +49,7 @@
 		@apply cursor-pointer;
 	}
 	button {
-		@apply p-1 border bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white rounded-md;
+		@apply p-1  bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white rounded-md;
 	}
 	.icon {
 		@apply text-2xl cursor-pointer;

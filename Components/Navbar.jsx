@@ -44,7 +44,8 @@ function Navbar() {
         </div>
         <ul className='hidden lg:flex items-center'>
           <Link href='/' passHref>
-            <li className='cursor-pointer'>Homepage</li>
+            <li className='cursor-pointer'>
+              <a>Homepage </a></li>
             </Link>
             <li>Products</li>
             <li>Menu</li>
